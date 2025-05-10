@@ -214,7 +214,7 @@ def page_participating_chat():
         if new_msg:
             user_name = st.session_state.profile.get("name", "User")
             st.session_state.chat_logs[idx].append({"name": user_name, "message": new_msg})
-            st.reruninit)
+            st.rerun()
     if st.button('← 参加中イベントへ戻る'):
         st.session_state.page = '参加中イベント'
         st.rerun()
