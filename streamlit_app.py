@@ -117,6 +117,9 @@ def page_event_complete():
     if st.button("イベント一覧へ", key="to_list"): 
         st.session_state.page = "イベント一覧"
         st.rerun()
+    if st.button("← トップへ戻る", key="home_from_events"):
+        st.session_state.page = "トップ画面"
+        st.rerun()
 
 
 def page_events_list():
@@ -165,7 +168,9 @@ def page_event_detail():
     if st.button('← イベント一覧へ戻る', key=f'back_event_{idx}'):
         st.session_state.page = 'イベント一覧'
         st.rerun()
-
+    if st.button("← トップへ戻る", key="home_from_events"):
+        st.session_state.page = "トップ画面"
+        st.rerun()
 
 def page_join_complete():
     idx = st.session_state.selected_event
@@ -176,7 +181,9 @@ def page_join_complete():
     if st.button("参加中イベント一覧へ"):
         st.session_state.page = "参加中イベント"
         st.rerun()
-
+    if st.button("← トップへ戻る", key="home_from_events"):
+        st.session_state.page = "トップ画面"
+        st.rerun()
 
 def page_participating():
     st.header("参加中のイベント")
